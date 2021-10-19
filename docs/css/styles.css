@@ -38,8 +38,14 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 .header__img {
     max-height: 150px;
     grid-column: 2/3;
+    transition: 1s  cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s;
 
 }
+.header__img:hover {
+transform: translateX(20px) rotate(3grad) rotateY(180grad);
+
+}
+
 @media (max-width:538px) {
     .header__list li{
         display: none;
@@ -103,10 +109,12 @@ color: rgb(255, 255, 255);
 padding: 10px 15px;
 text-align: center;
 transition-duration: 0.5s;
+cursor: default;
 
 }
 .content__title:hover {
     text-shadow:3px 1px 1px #e70b0b;
+    letter-spacing: 1.5px;
     
 }
 .galery__title{
@@ -140,6 +148,7 @@ transition-duration: 0.5s;
 .galery__item {
     position: relative;
     padding: 0px 0px 85% 0px;
+    overflow: hidden;
 }
 
 @media (min-width: 767px) {
@@ -160,22 +169,37 @@ transition-duration: 0.5s;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: 1s;
+    transition: 0.5s;
+ 
 }
- .galery__item img:hover{
+ .galery__item img:hover {
    opacity: 50%;
-   
-   
+   transform:   scale(1.01);
 }
+
+.galery__item:hover  .item__text{
+
+   opacity: 100%;
+ 
+    
+ }
+
 
 .item__text {
     position: absolute;
     font-size: 2em;
     color: blanchedalmond;
     text-align: center;
-    margin: 60% 0 0 0;
-    transition: 1s ease-in 0.1s;
+    margin: 60% 0 0 5%;
+    transition: 0.5s ease-out 0.1s;
+   opacity: 0%;
+   cursor: default;
     
+}
+.item__text:hover {
+   text-shadow: 2px 2px 0.5px black;
+   transition: 0.5s ease-out 0.1s;
+   transform:  rotateY(2grad) rotateZ(-1grad)  scale(1.05);
 }
 
 
@@ -195,6 +219,7 @@ transition-duration: 0.5s;
     color: rgb(255, 255, 255);
     line-height: 20px;
     margin: 0px 0px 20px 0px;
+    transition: 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .products__button {
     color: #fff;
@@ -206,11 +231,24 @@ transition-duration: 0.5s;
         padding: 0px 20px;
         line-height: 40px;
         justify-self: start;
+        transition: 0.2s ease-in;
+       
+}
+
+.products__button:hover {
+     
+    background-color: rgb(204, 26, 26);
+    top: 3px;
+     box-shadow: -2px 2px 1px #ffffff;
+     letter-spacing: 3px;
+    
+    
 }
 .products__image {
     position: relative;
     padding: 0px 0px 90% 0px;
     margin: 0px 0px 20px 0px;
+    overflow: hidden;
 }
 .products__image img {
     position: absolute;
@@ -219,9 +257,20 @@ transition-duration: 0.5s;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+}
+.products__image img:hover {
+  transform:  rotateY(10grad) rotateZ(-5grad)  scale(1.15);
+
+}
+
+.products__name:hover  {
+    letter-spacing: 2px;
 }
 .footer {
 background-color: #10002b;
+color: blanchedalmond;
 display: grid;
 grid-area: footer;
 grid-template: 1fr / 1fr minmax(auto, 300px) minmax(auto, 1100px) 1fr;
